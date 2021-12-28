@@ -10,9 +10,21 @@ export default function Tabs() {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator>
-      <Tab.Screen name="HomeNavigator" component={HomeNavigator} />
-      <Tab.Screen name="ProfileNavigator" component={ProfileNavigator} />
-      <Tab.Screen name="CartNavigator" component={CartNavigator} />
+      <Tab.Screen
+        name="HomeNavigator"
+        component={HomeNavigator}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="ProfileNavigator"
+        component={ProfileNavigator}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="CartNavigator"
+        component={CartNavigator}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }
