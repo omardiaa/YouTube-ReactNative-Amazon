@@ -13,17 +13,17 @@ export default function Tabs() {
       <Tab.Screen
         name="HomeNavigator"
         component={HomeNavigator}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="ProfileNavigator"
-        component={ProfileNavigator}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: "Home" }}
       />
       <Tab.Screen
         name="CartNavigator"
         component={CartNavigator}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: "Cart" }}
+      />
+      <Tab.Screen
+        name="ProfileNavigator"
+        component={ProfileNavigator}
+        options={{ headerShown: false, title: "Profile" }}
       />
     </Tab.Navigator>
   );

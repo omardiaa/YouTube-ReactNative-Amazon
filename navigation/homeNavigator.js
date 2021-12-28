@@ -4,12 +4,13 @@ import Home from "../pages/home";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import navigationOptions from "./navigationOptions";
 
 export default function HomeNavigator() {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home" component={Home} options={navigationOptions} />
     </Stack.Navigator>
   );
 }

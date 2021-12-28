@@ -1,7 +1,6 @@
 const colors = {
-  primary: "#041D52", //Blue
-  secondary: "#14C292", //Mint
-  secondary2: "#17FCC5", //Lighter Mint
+  primary: "#BDFBF6", //Blue
+  secondary: "#BDFFDC", //Mint
   textPrimary: "#000000", //Black
   textSecondary: "#191919", //Lighter Black
   borderColor: "#979797", //Grey

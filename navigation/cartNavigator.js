@@ -4,12 +4,13 @@ import Cart from "../pages/cart";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import navigationOptions from "./navigationOptions";
 
 export default function CartNavigator() {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Cart" component={Cart} />
+      <Stack.Screen name="Cart" component={Cart} options={navigationOptions} />
     </Stack.Navigator>
   );
 }

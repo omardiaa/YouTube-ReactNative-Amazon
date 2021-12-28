@@ -5,11 +5,17 @@ import Profile from "../pages/profile";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import navigationOptions from "./navigationOptions";
+
 export default function ProfileNavigator() {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={navigationOptions}
+      />
     </Stack.Navigator>
   );
 }
