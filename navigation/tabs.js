@@ -5,6 +5,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeNavigator from "./homeNavigator";
 import ProfileNavigator from "./profileNavigator";
 import CartNavigator from "./cartNavigator";
+import Icon from "react-native-vector-icons/FontAwesome5";
+
+import colors from "../theme/colors";
+import fonts from "../theme/fonts";
 
 export default function Tabs() {
   const Tab = createBottomTabNavigator();
@@ -13,17 +17,54 @@ export default function Tabs() {
       <Tab.Screen
         name="HomeNavigator"
         component={HomeNavigator}
-        options={{ headerShown: false, title: "Home" }}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Icon
+                name="home"
+                size={fonts.size.font18}
+                color={focused ? colors.secondary : colors.black}
+              />
+            );
+          },
+          headerShown: false,
+          title: ""
+        }}
+      />
+
+      <Tab.Screen
+        name="ProfileNavigator"
+        component={ProfileNavigator}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Icon
+                name="user"
+                size={fonts.size.font18}
+                color={focused ? colors.secondary : colors.black}
+              />
+            );
+          },
+          headerShown: false,
+          title: ""
+        }}
       />
       <Tab.Screen
         name="CartNavigator"
         component={CartNavigator}
-        options={{ headerShown: false, title: "Cart" }}
-      />
-      <Tab.Screen
-        name="ProfileNavigator"
-        component={ProfileNavigator}
-        options={{ headerShown: false, title: "Profile" }}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Icon
+                name="shopping-cart"
+                size={fonts.size.font18}
+                color={focused ? colors.secondary : colors.black}
+              />
+            );
+          },
+          headerShown: false,
+          title: ""
+        }}
       />
     </Tab.Navigator>
   );

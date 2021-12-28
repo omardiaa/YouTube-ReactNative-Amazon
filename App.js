@@ -5,18 +5,26 @@ import Tabs from "./navigation/tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
+
+import adsReducer from "./reducers/adsReducer";
+
 export default function App() {
   const Stack = createStackNavigator();
+  const store = createStore(combineReducers({ adsReducer }));
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Tabs"
-          component={Tabs}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Tabs"
+            component={Tabs}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
