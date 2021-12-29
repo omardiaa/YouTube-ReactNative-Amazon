@@ -4,6 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import colors from "../theme/colors";
 import fonts from "../theme/fonts";
 import { Dimensions } from "react-native";
+import {
+  HeaderSearchBar,
+  HeaderClassicSearchBar
+} from "react-native-header-search-bar";
 
 const { width, height } = Dimensions.get("window");
 export default function Home() {
@@ -31,7 +35,13 @@ export default function Home() {
   });
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: fonts.size.font18, fontWeight: "bold" }}>
+      <Text
+        style={{
+          textAlign: "right",
+          fontSize: fonts.size.font18,
+          fontWeight: "bold"
+        }}
+      >
         النتائج
       </Text>
       <FlatList
@@ -48,7 +58,6 @@ export default function Home() {
                 flexDirection: "row",
                 paddingVertical: 20,
                 marginVertical: 5,
-
                 backgroundColor: colors.lighterGrey,
                 borderColor: colors.lightGrey,
                 borderWidth: 1
