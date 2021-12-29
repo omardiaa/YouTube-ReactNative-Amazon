@@ -10,6 +10,7 @@ const navigationOptions = {
     backgroundColor: colors.primary,
     height: 120
   },
+  headerBackTitleStyle: { fontSize: 10 },
   headerTitle: () => {
     return (
       <View
@@ -24,7 +25,7 @@ const navigationOptions = {
         <View
           style={{
             height: 50,
-            width: 0.9 * width,
+            width: 0.8 * width,
             borderWidth: 1,
             padding: 10,
             borderRadius: 10,

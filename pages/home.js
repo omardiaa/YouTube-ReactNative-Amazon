@@ -1,5 +1,12 @@
 import { useEffect } from "react";
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  TouchableOpacity
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import colors from "../theme/colors";
 import fonts from "../theme/fonts";
@@ -7,8 +14,9 @@ import { Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { LinearGradient } from "expo-linear-gradient";
 
-const { width, height } = Dimensions.get("window");
-export default function Home() {
+const { width } = Dimensions.get("window");
+
+export default function Home({ navigation }) {
   const dispatch = useDispatch();
   useEffect(() => {
     fetch("http://omardiaa.com/YouTube/ReactNative/amazonProducts.php", {
@@ -71,7 +79,7 @@ export default function Home() {
         }}
         renderItem={({ item }) => {
           return (
-            <View
+            <TouchableOpacity
               style={{
                 width: "100%",
                 flexDirection: "row",
@@ -80,6 +88,9 @@ export default function Home() {
                 backgroundColor: colors.lighterGrey,
                 borderColor: colors.lightGrey,
                 borderWidth: 1
+              }}
+              onPress={() => {
+                navigation.navigate("Item", item);
               }}
             >
               <View style={{ flex: 2 }}>
@@ -105,7 +116,7 @@ export default function Home() {
                   <Text style={{ textAlignVertical: "bottom" }}>EGP</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={(item, index) => "key" + index}

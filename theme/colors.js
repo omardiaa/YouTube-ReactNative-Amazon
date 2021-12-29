@@ -11,7 +11,8 @@ const colors = {
   black: "#191919", //Light Black
   grey: "#979797", //Light Grey
   lightGrey: "#f3f3f3",
-  lighterGrey: "#f7f7f7"
+  lighterGrey: "#f7f7f7",
+  blue: "#2fa8ff"
 };
 
 export default colors;

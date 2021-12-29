@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "../pages/home";
+import Item from "../pages/item";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -11,6 +12,7 @@ export default function HomeNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} options={navigationOptions} />
+      <Stack.Screen name="Item" component={Item} options={navigationOptions} />
     </Stack.Navigator>
   );
 }
