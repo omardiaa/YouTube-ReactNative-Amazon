@@ -1,5 +1,7 @@
 const colors = {
   primary: "#BDFBF6", //Blue
+  lighterPrimary: "#EFFFF0", //Lighter Blue
+
   secondary: "#6bbfb9", //Dark Mint
   textPrimary: "#000000", //Black
   textSecondary: "#191919", //Lighter Black

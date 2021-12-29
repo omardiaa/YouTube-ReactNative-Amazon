@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import colors from "../theme/colors";
 import fonts from "../theme/fonts";
 import { Dimensions } from "react-native";
-import {
-  HeaderSearchBar,
-  HeaderClassicSearchBar
-} from "react-native-header-search-bar";
+import Icon from "react-native-vector-icons/FontAwesome5";
+import { LinearGradient } from "expo-linear-gradient";
 
 const { width, height } = Dimensions.get("window");
 export default function Home() {
@@ -37,13 +35,34 @@ export default function Home() {
     <View style={styles.container}>
       <Text
         style={{
-          textAlign: "right",
           fontSize: fonts.size.font18,
-          fontWeight: "bold"
+          fontWeight: "bold",
+          padding: 10
         }}
       >
-        النتائج
+        Results
       </Text>
+      <LinearGradient
+        start={{ x: -0.5, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        style={{
+          padding: 15,
+          backgroundColor: colors.primary,
+          flexDirection: "row"
+        }}
+        colors={[colors.primary, colors.lighterPrimary]}
+      >
+        <Icon name="map-marker-alt" size={fonts.size.font16} />
+        <Text
+          style={{
+            fontSize: fonts.size.font16
+          }}
+        >
+          {"  "}
+          Delivery to Cairo - Omar
+        </Text>
+      </LinearGradient>
+
       <FlatList
         data={ads}
         numColumns={1}
@@ -98,7 +117,6 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    padding: 10
+    backgroundColor: "#fff"
   }
 });
