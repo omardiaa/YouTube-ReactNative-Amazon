@@ -1,19 +1,22 @@
 export default function cartReducer(state = [], action) {
-  console.log("Current State: ", state);
   switch (action.type) {
     case "cart/add":
-      found = false;
-      state.forEach(cur => {
+      let tempState = [];
+      let found = false;
+      for (let i = 0; i < state.length; i++) {
+        let cur = state[i];
         if (cur.id == action.payload.id) {
-          found = true;
           cur.quantity++;
-          return [...state];
+          console.log("Gotcha!");
+          found = true;
         }
-      });
-      if (!found) {
-        action.payload.quantity = 1;
-        return [...state, action.payload];
+        tempState.push(cur);
       }
+      if (found) return tempState;
+
+      action.payload.quantity = 1;
+      console.log("Gotcha2");
+      return [...state, action.payload];
     default:
       return state;
   }
