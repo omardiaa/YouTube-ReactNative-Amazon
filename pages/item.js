@@ -3,11 +3,12 @@ import { Dimensions } from "react-native";
 import fonts from "../theme/fonts";
 import colors from "../theme/colors";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useDispatch } from "react-redux";
 
 const { width } = Dimensions.get("window");
 export default function Item({ route }) {
   const item = route.params;
-  console.log(item);
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Text
@@ -42,7 +43,11 @@ export default function Item({ route }) {
           EGP
         </Text>
       </View>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity
+        onPress={() => {
+          dispatch({ type: "cart/add", payload: item });
+        }}
+      >
         <Text style={{ fontSize: fonts.size.font16, color: colors.blue }}>
           Add to Cart
         </Text>

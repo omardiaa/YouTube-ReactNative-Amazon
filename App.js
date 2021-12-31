@@ -9,10 +9,11 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
 import adsReducer from "./reducers/adsReducer";
+import cartReducer from "./reducers/cartReducer";
 
 export default function App() {
   const Stack = createStackNavigator();
-  const store = createStore(combineReducers({ adsReducer }));
+  const store = createStore(combineReducers({ adsReducer, cartReducer }));
   return (
     <Provider store={store}>
       <NavigationContainer>
